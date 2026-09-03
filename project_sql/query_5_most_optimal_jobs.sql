@@ -57,7 +57,7 @@ ORDER BY
      avg_salary DESC,
     skill_count DESC
    
-LIMIT 25;
+LIMIT 10;
 
 
 -- Approach 2: Consolidated Direct Join (Query Optimization)
@@ -84,4 +84,4 @@ HAVING
 ORDER BY
     avg_salary DESC,
     skill_count DESC
-LIMIT 25;
+LIMIT 10;
