@@ -22,7 +22,7 @@ To analyze this dataset and build this portfolio project, I utilized the followi
 #  Analysis
 ### 1. Top Paying Jobs
 **Goal:** Find the top 10 highest-paying remote roles available for Data Analysts and Business Analysts to see what the top end of the market actually pays.
-- **Query File:** [`query_1_top_paying_jobs.sql`](project_sql/query_1_top_paying_jobs.sql)
+- **Query File:** [`query_1_top_paying_jobs.sql`](project_sql/query_1_top_paying _jobs.sql)
 
 ```sql
 SELECT
