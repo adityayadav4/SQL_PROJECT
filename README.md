@@ -1,10 +1,10 @@
 # Introduction
-Welcome to my SQL portfolio project! I built this project to sharpen my database querying skills and demonstrate my ability to extract actionable insights from raw data.
+Welcome to my SQL portfolio project! I built this repository to apply my database querying skills and demonstrate my ability to extract practical, real-world insights from raw data.
 
-Using a comprehensive job market dataset from 2023, this project serves as both a hands-on technical exercise and a deep dive into the foundational trends of the data analytics industry. All the SQL queries used to extract these insights are located in the [`project_sql folder`](/project_sql/) .
+Using a massive job market dataset from 2023, this project serves as both a hands-on technical sandbox and a strategic guide for navigating the data analytics industry. All the SQL queries used to extract these insights are located in the [`project_sql folder`](/project_sql/) .
 
 ## Background
-As I focus on transitioning fully into data analytics, I wanted to take a data-driven approach to my own skill development. Instead of relying on generic advice about what tools to learn, I used this 2023 dataset as a sandbox to uncover real trends in salaries, remote work, and tool requirements.
+As I focus on transitioning fully into data analytics, I wanted to take a data-driven approach to my own skill development. Instead of guessing or relying on generic advice about what tools to learn next, I used this 2023 dataset to uncover the actual trends in salaries, remote work, and tool requirements.
 
 **My goal was to establish a clear baseline of what makes a data analyst valuable and build a strategic learning roadmap. I structured my analysis around five key questions:**
 1. What were the absolute highest-paying remote Data Analyst jobs in 2023?
@@ -14,9 +14,9 @@ As I focus on transitioning fully into data analytics, I wanted to take a data-d
 5. Where was the "sweet spot"—the optimal skills that offered both high job availability and high pay?
 
 # Tools I Used
-To analyze this dataset and build this portfolio project, I utilized the following stack:
+To analyze this dataset and build this project, I utilized the following stack:
 - **SQL (PostgreSQL):** The core engine for my analysis. I used it to write complex queries, join multiple tables, and aggregate millions of rows of job posting data.
-- **Visual Studio Code / DBeaver:** My primary environments for database management and executing SQL scripts.
+- **Visual Studio Code & DBeaver:** My primary environments for database management and executing SQL scripts.
 - **Git & GitHub:** For version control, organizing my code, and sharing my portfolio.
 
 #  Analysis
@@ -44,19 +44,29 @@ ORDER BY
     salary_year_avg DESC
 LIMIT 10;
 ```
-![Top Paying jobs](./assets/query_1_top_paying_jobs.png)
- *Horizontal bar chart showing the top 10 highest-paying remote analyst roles; chart generated from SQL query results by AI.*
+| job_id | job_title | job_location | company_name | job_schedule_type | salary_year_avg | job_posted_date |
+| :---: | :--- | :--- | :--- | :--- | ---: | :--- |
+| 226942 | Data Analyst | Anywhere | Mantys | Full-time | $650,000 | 2023-02-20 15:13:33 |
+| 547382 | Director of Analytics | Anywhere | Meta | Full-time | $336,500 | 2023-08-23 12:04:42 |
+| 552322 | Associate Director- Data Insights | Anywhere | AT&T | Full-time | $255,829.50 | 2023-06-18 16:03:12 |
+| 99305 | Data Analyst, Marketing | Anywhere | Pinterest Job Advertisements | Full-time | $232,423 | 2023-12-05 20:00:40 |
+| 502610 | Lead Business Intelligence Engineer | Anywhere | Noom | Full-time | $220,000 | 2023-08-29 18:26:36 |
+| 1021647 | Data Analyst (Hybrid/Remote) | Anywhere | Uclahealthcareers | Full-time | $217,000 | 2023-01-17 00:17:23 |
+| 112859 | Manager II, Applied Science - Marketplace Dynamics | Anywhere | Uber | Full-time | $214,500 | 2023-12-18 08:02:37 |
+| 168310 | Principal Data Analyst (Remote) | Anywhere | SmartAsset | Full-time | $205,000 | 2023-08-09 11:00:01 |
+| 1069582 | Analyst | Anywhere | Multicoin Capital | Full-time | $200,000 | 2023-12-21 13:01:17 |
+| 998056 | Analyst | Anywhere | Multicoin Capital | Full-time | $200,000 | 2023-10-04 11:01:48 |
 
- ### Takeaways
- - Wide Pay Range: Top remote roles start around $200,000 and climb up to $650,000, showing that high-impact analytics work commands serious pay.
+### Takeaways
+ - Huge Pay Ceilings: Top remote roles start around $200,000 and climb up to $650,000, proving that high-impact analytics work is heavily compensated.
 
- - Seniority Matters Most: Most positions crossing the $220,000+ mark carry titles like "Director", "Lead", or "Associate Director", meaning deep business ownership and leadership are where the highest payouts sit.
+- Seniority is Key: Most positions crossing the $220,000 mark carry titles like "Director" or "Lead", meaning true business ownership is where the highest payouts sit.
 
- - Tech & Growth Companies Dominate: Well-known tech companies (Meta, Uber, Pinterest) and specialized investment/health organizations make up the bulk of top-paying remote listings.
+- Tech Dominates: Major tech firms (Meta, Uber, Pinterest) and specialized investment groups make up the bulk of these elite remote listings.
 
- ### 2. Skills For Top Paying Jobs
-**Goal:** Identify the highest-paying remote data analyst positions in the 2023 dataset to understand the absolute top end of the market.
-- **Query File:** [`query_2_skills_for_top_paying_jobs folder`](project_sql/query_2_skills_for_top_paying_jobs.sql)
+### 2. Skills For Top Paying Jobs
+**Goal:** Identify the specific technical skills required by those top 10 highest-paying remote data analyst positions.
+- **Query File:** [`query_2_skills_for_top_paying_jobs.sql`](project_sql/query_2_skills_for_top_paying_jobs.sql)
 
 ```sql
 WITH top_paying_jobs AS (
@@ -87,19 +97,19 @@ ORDER BY
     salary_year_avg DESC;
 ```
 ![`Skills For Top Paying Jobs`](./assets/query_2_skills_for_top_paying_jobs.png)
-*Bar chart showing the most frequently requested skills among the top 10 highest-paying roles; generated from SQL query results BY AI.*
+*Bar chart showing the most frequently requested skills among the top 10 highest-paying roles (Generated bY AI for better representation).*
 
 
- ### Takeaways
- - The Core Trinity: SQL, Python, and Tableau tied as the most demanded skills, each appearing in 5 of the top postings with defined skill stacks.
+### Takeaways
+- The Big Three: SQL, Python, and Tableau tied as the most demanded skills, appearing in 5 of the top postings.
 
-- Modern Cloud Stack: High-paying roles frequently pair core query skills with enterprise data infrastructure like AWS, Azure, Databricks, and Snowflake.
+- Cloud is Crucial: High-paying roles consistently pair core querying skills with enterprise infrastructure like AWS, Azure, Databricks, and Snowflake.
 
-- Advanced Data Processing: Libraries like Pandas and frameworks like PySpark emerge alongside Python, proving that top earners handle large-scale transformation beyond basic reporting.
+- Heavy Data Lifting: Tools like Pandas and PySpark show up alongside Python, indicating that top earners are expected to handle complex data transformation.
 
 ### 3. Most Demanded Skills
-**Goal:** Determine the most frequently requested technical skills across remote Data Analyst and Business Analyst job postings to establish baseline market requirements.
-- **Query File:** [`query_3_most_demanded_skills folder`](project_sql/query_3_most_demanded_skills.sql)
+**Goal:** Determine the most frequently requested technical skills across the entire remote Data and Business Analyst market to establish baseline requirements.
+- **Query File:** [`query_3_most_demanded_skills.sql`](project_sql/query_3_most_demanded_skills.sql)
 
 ```sql
 SELECT 
@@ -127,15 +137,16 @@ LIMIT 6;
 | Power BI | 3,164 |
 | R | 2,396 |
 
- ### Takeaways
- - SQL is the Foundation: Appearing in 8,557 postings, SQL is required far more than any other tool, solidifying its place as the single most critical baseline skill for analysts.
- - Spreadsheets Remain Vital: Excel ranks second with 5,594 postings, proving that traditional spreadsheet modeling remains indispensable alongside modern programming languages.
+### Takeaways
+- SQL is Mandatory: Showing up in 8,557 postings, SQL is the undeniable foundation of the analytics market.
 
-- Programming & BI Breakdown: Python (4,876) comfortably leads R (2,396) as the primary scripting language, while Tableau (4,473) edges out Power BI (3,164) in overall remote market demand.
+- Spreadsheets Aren't Dead: Excel ranks second, proving that traditional spreadsheet modeling is still heavily relied upon.
+
+- The Python/Tableau Advantage: Python comfortably beats R as the top scripting language, while Tableau slightly edges out Power BI.
 
 ### 4. Top Skills Based On Salary
-**Goal:** Determine the most frequently requested technical skills across remote Data Analyst and Business Analyst job postings to establish baseline market requirements.
-- **Query File:** [`query_4_top_skills_based_on_salary folder`](project_sql/query_4_top_skills_based_on_salary.sql)
+**Goal:** Figure out which skills actually command the highest average salaries, filtering out low-volume anomalies.
+- **Query File:** [`query_4_top_skills_based_on_salary.sql`](project_sql/query_4_top_skills_based_on_salary.sql)
 
 ```sql
 SELECT
@@ -170,17 +181,16 @@ LIMIT 20;
 | Excel | $88,027 |
 | Word | $84,012 |
 
- ### Takeaways
- - Modern BI & Programming Cross the Six-Figure Mark: Looker ($106,259), Python ($102,578), and R ($101,223) lead the highest average salaries among common skills (>50 postings), showing the financial value of scripting and modern BI tools.
+### Takeaways
+- Programming Pays: Python and R push average salaries past the six-figure mark, proving the financial value of knowing how to code.
 
-- Core BI & Querying Range in the Upper $90Ks: Foundational tools like Tableau ($99,807), SQL ($97,417), and Power BI ($96,744) consistently average near six figures.
+- Core BI is Stable: Standard tools like Tableau, SQL, and Power BI hover steadily in the high $90K range.
 
-- Productivity Tools Sits at the Baseline: General office applications like Excel ($88,027) and Word ($84,012) lag behind programming and dedicated BI platforms by $10,000–$20,000 annually.
+- Office Tools Sit at the Bottom: While necessary, basic productivity software like Excel and Word lag behind specialized analytics platforms by over $10,000 annually.
 
 ### 5. Most Optimal Skills
-**Goal:** Identify high-value skills that balance strong job security (demand count > 10) with top earning potential for remote Data and Business Analysts.
-
-- **Query File:** [query_5_most_optimal_jobs folder](project_sql/query_5_most_optimal_jobs.sql)
+**Goal:** Identify the "sweet spot" skills that balance high market demand (job security) with top earning potential.
+- **Query File:** [query_5_most_optimal_jobs.sql](./project_sql/query_5_most_optimal_jobs.sql)
 
 ```sql
 SELECT
@@ -207,7 +217,7 @@ ORDER BY
     skill_count DESC
 LIMIT 10;
 ```
-*Query Optimization Note: While this can be built using multiple CTEs to separate demand and salary metrics, this single-query approach aggregates both metrics in one pass, minimizing I/O and execution time.*
+*Query Optimization Note: This single-query approach aggregates both demand and salary metrics in one pass, minimizing I/O and execution time rather than relying on multiple CTEs.*
 
 | skill_id | Skill | Posting Count | Average Annual Salary |
 | :---: | :--- | ---: | ---: |
@@ -222,30 +232,30 @@ LIMIT 10;
 | 194 | SSIS | 12 | $106,683 |
 | 185 | Looker | 54 | $106,259 |
 
- ### Takeaways
- - Data engineering and cloud warehousing command the highest pay in the market. Databricks leads at $139,006, followed by Snowflake ($112,989) and BigQuery ($110,804), proving that enterprise pipeline skills drive top-tier compensation.
+### Takeaways
+- Data Engineering is Highly Valued: Databricks leads the pack at $139,006, followed by Snowflake and BigQuery. Enterprise pipeline skills clearly drive top-tier compensation.
 
-- Major cloud ecosystems provide predictable, high-value career paths with six-figure parity, including Azure (35 postings at $110,804) and AWS (32 postings at $108,317).
+- Cloud Ecosystems are Safe Bets: Major cloud platforms like Azure and AWS provide a predictable path to six-figure salaries.
 
-- Looker serves as the optimal sweet spot among BI tools, combining the highest demand in this tier with 54 postings and a strong average salary of $106,259.
+- Looker is the Ultimate Sweet Spot: Looker balances solid demand (54 postings) with a strong average salary ($106,259), making it highly optimal to learn.
 
 # What I Learned
-Executing this project allowed me to significantly level up my practical SQL problem-solving skills:
+Building this project taught me a lot more than just writing syntax. It leveled up my practical problem-solving skills:
 
 - Complex Joins: I learned how to seamlessly connect fact and dimension tables using intermediate bridge tables (skills_job_dim).
 
-- Data Aggregation: I became comfortable utilizing GROUP BY with aggregate functions like COUNT() and AVG() to pull meaningful, high-level metrics out of massive datasets.
+- Data Aggregation: I got comfortable using GROUP BY with aggregate functions like COUNT() and AVG() to pull high-level metrics out of massive, raw datasets.
 
-- Query Optimization & Execution: I gained a practical understanding of execution order—specifically when to use WHERE (filtering raw data before grouping) versus HAVING (filtering aggregated metrics after grouping), which was essential for isolating accurate salary trends.
+- Execution Order Logic: I gained a real understanding of when to use WHERE (filtering raw data before grouping) versus HAVING (filtering aggregated metrics after grouping)—a crucial distinction for getting accurate salary trends.
 
 # Conclusion
-Based on this analysis of the job market, the data outlines a straightforward path for aspiring analysts:
+This data-driven dive into the job market gave me exactly what I was looking for—a clear, no-nonsense roadmap for my own upskilling:
 
-- Master the Non-Negotiables: SQL and Excel are mandatory for baseline market viability.
+- Nail the Basics First: SQL and Excel are mandatory. You can't enter the market without them.
 
-- Learn to Code: Python is the most valuable addition to a basic analyst stack, opening doors to advanced analytics and higher-paying roles.
+- Learn to Code: Python is the highest-value addition to a basic analyst stack, unlocking advanced analytics and better pay.
 
-- Target Cloud Tech for Salary Bumps: Adding tools like Snowflake or AWS to your repertoire is the most reliable way to push into senior salary bands once your technical foundation is set.
+- Target the Cloud: Adding tools like Snowflake or AWS to my toolbelt is the smartest way to push into senior salary bands once the foundation is set.
 
 
 
